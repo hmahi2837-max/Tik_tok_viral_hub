@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Growth Hub 🔥 Launch Offer</title>
+<style>
+  :root{ --bg:#0a0a0a; --card:#1a1a1f; --accent:#fe2c55; --text:#fff; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:'Poppins',sans-serif; background:var(--bg); color:var(--text); }
+  header{ text-align:center; padding:40px 20px; background:linear-gradient(135deg,#fe2c55,#25f4ee); color:#000; }
+  header h1{ margin:0; font-size:32px; }
+  .badge{ background:#000; color:#fe2c55; padding:5px 12px; border-radius:20px; font-size:12px; font-weight:bold; }
+  .container{ max-width:1000px; margin:30px auto; padding:0 20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+  .card{ background:var(--card); border:1px solid #222; border-radius:16px; padding:22px; transition:.3s; display:flex; flex-direction:column; position:relative; }
+  .card:hover{ border-color:var(--accent); box-shadow:0 0 20px #fe2c5522; transform:translateY(-6px); }
+  .card h3{ margin:0 0 8px; color:var(--accent); }
+  .card p{ font-size:14px; opacity:.8; flex-grow:1; }
+  .price{ font-size:24px; font-weight:800; margin:12px 0; }
+  .old-price{ text-decoration:line-through; opacity:.6; font-size:14px; margin-right:8px; }
+  button{ width:100%; padding:12px; border:none; border-radius:10px; background:var(--accent); color:#fff; font-weight:bold; cursor:pointer; font-size:16px; }
+  #orderBox{ display:none; background:var(--card); max-width:520px; margin:30px auto; padding:25px; border-radius:16px; border:1px solid var(--accent); }
+  input,textarea{ width:100%; padding:12px; margin:8px 0; background:#222; border:1px solid #333; border-radius:10px; color:#fff; }
+  .note{ text-align:center; padding:20px; font-size:13px; opacity:.7; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🔥 TikTok Growth Hub</h1>
+  <p><span class="badge">LIMITED TIME: 50% OFF</span></p>
+</header>
+
+<div class="container">
+  <div class="card"><h3>30 Viral Video Ideas Pack</h3><p>1 Month ka content plan + Hook lines jo FYP pe chalti hain</p><div class="price"><span class="old-price">Rs. 299</span> Rs. 149</div><button onclick="order('30 Viral Video Ideas Pack', 149)">Buy Now</button></div>
+  
+  <div class="card"><h3>Trending Sounds List</h3><p>Har hafte ke Top 20 Trending Sounds PDF me</p><div class="price"><span class="old-price">Rs. 199</span> Rs. 99</div><button onclick="order('Trending Sounds List', 99)">Buy Now</button></div>
+  
+  <div class="card"><h3>TikTok Account Audit</h3><p>Bataunga tera account kyun grow nahi kar raha + Fix Plan</p><div class="price"><span class="old-price">Rs. 499</span> Rs. 249</div><button onclick="order('TikTok Account Audit', 249)">Buy Now</button></div>
+  
+  <div class="card"><h3>Video Editing 1 Reel</h3><p>CapCut Pro Edit with Captions + Effects + Trending Sound</p><div class="price"><span class="old-price">Rs. 399</span> Rs. 199</div><button onclick="order('Video Editing 1 Reel', 199)">Buy Now</button></div>
+</div>
+
+<div id="orderBox">
+  <h3 id="orderTitle"></h3>
+  <input id="name" placeholder="TikTok Username @...">
+  <input id="whatsapp" placeholder="WhatsApp Number 03xx...">
+  <textarea id="detail" rows="3" placeholder="Niche likho: Comedy, Vlog, Skincare etc"></textarea>
+  <button onclick="submitOrder()">WhatsApp pe Order Karo ✅</button>
+</div>
+
+<p class="note">Note: Ye launch offer sirf naye customers ke liye hai. Baad me price barh jayegi.</p>
+
+<script>
+let selectedService = "", selectedPrice = 0;
+function order(service, price){
+  selectedService = service; selectedPrice = price;
+  document.getElementById('orderTitle').innerText = `Order: ${service} - Rs.${price} [Launch Offer]`;
+  document.getElementById('orderBox').style.display = 'block';
+  document.getElementById('orderBox').scrollIntoView({behavior:'smooth'});
+}
+function submitOrder(){
+  const n = document.getElementById('name').value.trim();
+  const w = document.getElementById('whatsapp').value.trim();
+  const d = document.getElementById('detail').value.trim();
+  if(!n || !w){ alert("Username aur WhatsApp lazmi hai bhai"); return; }
+  
+  const msg = `*TIKTOK GROWTH ORDER [50% OFF]*%0A-------------------%0A*Service:* ${selectedService}%0A*Price:* Rs.${selectedPrice}%0A*TikTok:* ${n}%0A*WhatsApp:* ${w}%0A*Niche:* ${d || 'N/A'}`;
+  
+  const myNumber = "923486732597"; 
+  window.open(`https://wa.me/${myNumber}?text=${msg}`,'_blank');
+}
+</script>
+
+</body>
+</html>
